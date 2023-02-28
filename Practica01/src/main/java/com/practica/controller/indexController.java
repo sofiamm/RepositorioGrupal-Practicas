@@ -15,8 +15,10 @@ public class indexController {
 
     @GetMapping("/")
     public String inicio(Model model) {
+        
         var paises = paisService.getPaises();
         model.addAttribute("listaPaises", paises);
+        
         return "index";
     }
 }
