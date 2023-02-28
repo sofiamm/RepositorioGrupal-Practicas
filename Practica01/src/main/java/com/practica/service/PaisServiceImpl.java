@@ -1,7 +1,5 @@
 package com.practica.service;
 
-
-
 import com.practica.dao.PaisDao;
 import com.practica.domain.Pais;
 import java.util.List;
@@ -13,35 +11,29 @@ import org.springframework.transaction.annotation.Transactional;
 public class PaisServiceImpl implements PaisService {
 
     @Autowired
-    PaisDao PaisDao;
+    PaisDao paisDao;
 
     @Override
     @Transactional(readOnly = true)
     public List<Pais> getPaises() {
-        return (List<Pais>) PaisDao.findAll();
+        return (List<Pais>) paisDao.findAll();
     }
 
     @Override
     @Transactional(readOnly = true)
     public Pais getPais(Pais pais) {
-        return PaisDao.findById(Pais.getIdPais()).orElse(null);
+        return paisDao.findById(pais.getIdPais()).orElse(null);
     }
 
     @Override
     @Transactional
     public void saveCliente(Pais pais) {
-        PaisDao.save(pais);
+        paisDao.save(pais);
     }
 
     @Override
     @Transactional
-    public void deleteCliente(Cliente cliente) {
-        clienteDao.deleteById(cliente.getIdCliente());
+    public void deleteCliente(Pais pais) {
+        paisDao.deleteById(pais.getIdPais());
     }
-
- 
-    }
-
-  
-    
-
+}
