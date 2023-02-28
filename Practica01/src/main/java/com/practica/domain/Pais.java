@@ -17,8 +17,8 @@ public class Pais implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_pais;
-    private String nombre_estado;
+    private Long idPais;
+    private String nombreEstado;
     private String capital;
     private String pobalcion;
     private String costas;
@@ -26,9 +26,8 @@ public class Pais implements Serializable {
     public Pais() {
     }
 
-    public Pais(Long id_pais, String nombre_estado, String capital, String pobalcion, String costas) {
-        this.id_pais = id_pais;
-        this.nombre_estado = nombre_estado;
+    public Pais(String nombreEstado, String capital, String pobalcion, String costas) {
+        this.nombreEstado = nombreEstado;
         this.capital = capital;
         this.pobalcion = pobalcion;
         this.costas = costas;
