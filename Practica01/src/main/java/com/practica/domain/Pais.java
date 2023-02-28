@@ -8,14 +8,13 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
 
-
 @Data
 @Entity
-@Table(name="pais")
-public class Pais implements Serializable{
-    
+@Table(name = "pais")
+public class Pais implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_pais;
@@ -34,6 +33,5 @@ public class Pais implements Serializable{
         this.pobalcion = pobalcion;
         this.costas = costas;
     }
-    
-    
+
 }
