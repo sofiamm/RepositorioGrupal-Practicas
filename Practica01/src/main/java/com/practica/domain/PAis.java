@@ -1,5 +1,5 @@
 package com.practica.domain;
 
-public class Cliente {
+public class Pais {
     
 }
