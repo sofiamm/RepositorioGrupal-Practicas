@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "pais")
+@Table(name = "estado")
 public class Pais implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -20,16 +20,16 @@ public class Pais implements Serializable {
     private Long idPais;
     private String nombreEstado;
     private String capital;
-    private String pobalcion;
+    private String poblacion;
     private String costas;
 
     public Pais() {
     }
 
-    public Pais(String nombreEstado, String capital, String pobalcion, String costas) {
+    public Pais(String nombreEstado, String capital, String poblacion, String costas) {
         this.nombreEstado = nombreEstado;
         this.capital = capital;
-        this.pobalcion = pobalcion;
+        this.poblacion = poblacion;
         this.costas = costas;
     }
 

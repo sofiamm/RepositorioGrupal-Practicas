@@ -41,7 +41,7 @@ public class indexController {
         return "modificarPais";
     }
 
-    @GetMapping("/eliminarPais{idPais}")
+    @GetMapping("/eliminarPais/{idPais}")
     public String eliminarPais(Pais pais) {
         paisService.deletePais(pais);
         return "redirect:/";

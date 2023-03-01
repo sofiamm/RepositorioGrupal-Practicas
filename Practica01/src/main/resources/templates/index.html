@@ -7,6 +7,32 @@
     </head>
     <body>
         <header th:replace="layout/plantilla :: header"/>
+        <h2>Lista de países</h2>
+        <a th:href="@{/nuevoPais}">Nuevo País</a>
+        <div th:if="${listaPaises!=null and !listaPaises.empty}">
+            <table border="1">
+                <thead>
+                <th>Nombre</th>
+                <th>Capital</th>
+                <th>Población</th>
+                <th>Costas</th>
+                <th colspan="2">Acciones</th>
+                <tbody>
+                    <tr th:each="item: ${listaPaises}">
+                        <td th:text="${item.nombreEstado}"></td>
+                        <td th:text="${item.capital}"></td>
+                        <td th:text="${item.poblacion}"></td>
+                        <td th:text="${item.costas}"></td>
+                        <td><a th:href="@{/modificarPais/}+${item.idPais}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarPais/}+${item.idPais}">Eliminar</a></td>
+                    </tr>
+                </tbody>
+                </thead>
+            </table>
+        </div>
+        <div th:if="${listaPaises==null or listaPaises.empty}">
+            <p>¡La lista esta vacía!</p>
+        </div>
         <footer th:replace="layout/plantilla :: footer"/>
     </body>
 </html>
