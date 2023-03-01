@@ -1,4 +1,4 @@
-package com.practica.domain;
+package com.practica01.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

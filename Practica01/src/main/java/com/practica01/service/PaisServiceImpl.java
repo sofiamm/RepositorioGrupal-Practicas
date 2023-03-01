@@ -1,7 +1,7 @@
-package com.practica.service;
+package com.practica01.service;
 
-import com.practica.dao.PaisDao;
-import com.practica.domain.Pais;
+import com.practica01.dao.PaisDao;
+import com.practica01.domain.Pais;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,4 +36,5 @@ public class PaisServiceImpl implements PaisService {
     public void deletePais(Pais pais) {
         paisDao.deleteById(pais.getIdPais());
     }
+
 }

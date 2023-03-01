@@ -1,6 +1,6 @@
-package com.practica.service;
+package com.practica01.service;
 
-import com.practica.domain.Pais;
+import com.practica01.domain.Pais;
 import java.util.List;
 
 public interface PaisService {

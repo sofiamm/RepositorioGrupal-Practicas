@@ -1,7 +1,7 @@
-package com.practica.controller;
+package com.practica01.controller;
 
-import com.practica.domain.Pais;
-import com.practica.service.PaisService;
+import com.practica01.domain.Pais;
+import com.practica01.service.PaisService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,32 +18,31 @@ public class indexController {
 
     @GetMapping("/")
     public String inicio(Model model) {
-
         var paises = paisService.getPaises();
         model.addAttribute("listaPaises", paises);
         return "index";
     }
     
     @GetMapping("/nuevoPais")
-    public String nuevoCliente(Pais pais) {
+    public String nuevoPais(Pais pais) {
         return "modificarPais";
     }
 
     @PostMapping("/guardarPais")
-    public String guardarCliente(Pais pais) {
+    public String guardarPais(Pais pais) {
         paisService.savePais(pais);
         return "redirect:/";
     }
 
     @GetMapping("/modificarPais/{idPais}")
-    public String modificarCliente(Pais pais, Model model) {
+    public String modificarPais(Pais pais, Model model) {
         pais = paisService.getPais(pais);
         model.addAttribute("pais", pais);
         return "modificarPais";
     }
 
     @GetMapping("/eliminarPais{idPais}")
-    public String eliminarCliente(Pais pais) {
+    public String eliminarPais(Pais pais) {
         paisService.deletePais(pais);
         return "redirect:/";
     }
