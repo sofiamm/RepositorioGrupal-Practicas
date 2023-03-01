@@ -9,7 +9,7 @@ public interface PaisService {
 
     public Pais getPais(Pais pais);
 
-    public void savePais(Pais pais); //Para insertar o modificar - si viene el idPais o no
+    public void savePais(Pais pais);
 
     public void deletePais(Pais pais);
 }
